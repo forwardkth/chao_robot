@@ -33,42 +33,39 @@ using adafruit::bbio::BBIOError;
 class WifiRobotSub {
  public:
   explicit WifiRobotSub(const ros::NodeHandle& nhl,
-                        // int servoxy_angle,  // degree
-                        // int servoz_angle,   // degree
-                        // robot PLZ init
-                        // const string& PWM1B,
-                        // const string& PWM2B,
-                        // const AdafruitBBIOServo& servoXY, //P9_16
-                        // const AdafruitBBIOServo& servoZ,  //p8_13
                         // robot motor init
                         const Gpio& GPIO1_12,
                         const Gpio& GPIO1_13,
                         const Gpio& GPIO1_14,
-                        const Gpio& GPIO1_15);
+                        const Gpio& GPIO1_15,
+                        // robot pwm init
+                        const Pwm& PWM1A,
+                        const Pwm& PWM1B,
+                        float pwm_duty_cycle,
+                        float linear_x,
+                        float angular_z);
 
   ~WifiRobotSub();
 
-  //callback function
+  //Subscriber callback functions
   void wifiRobotCmdCallback(const geometry_msgs::Twist::ConstPtr& msg);
 
  private:
   ros::NodeHandle hl_;
-  ros::NodeHandle nhlocal_;  // http://wiki.ros.org/roscpp_tutorials/Tutorials/AccessingPrivateNamesWithNodeHandle
-  // int servoxy_angle_;  // degree
-  // int servoz_angle_;   // degree
-  // robot PLZ init
-  // string PWM1B_;
-  // string PWM2B_;
-  // AdafruitBBIOServo servoXY_; //P9_16
-  // AdafruitBBIOServo servoZ_;  //p8_13
+  ros::NodeHandle nhlocal_;  
 
   // robot motor init
   Gpio GPIO1_12_;
   Gpio GPIO1_13_;
   Gpio GPIO1_14_;
   Gpio GPIO1_15_;
-  //tf2_ros::Buffer tf_buffer_;
-  //tf2_ros::TransformListener tf_listener_;
+  Pwm pwm_motor_a_;
+  Pwm pwm_motor_b_;
+  float pwm_duty_cycle_;
+  float linear_x_;
+  float angular_z_;
+
+  // ROS subscribers
   ros::Subscriber WifiRobotCmdSub_;
 };
 

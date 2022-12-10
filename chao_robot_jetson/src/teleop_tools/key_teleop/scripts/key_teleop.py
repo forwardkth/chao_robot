@@ -81,6 +81,7 @@ class KeyTeleop():
 
     _linear = None
     _angular = None
+    _pwm_duty_cycle = 30.0
 
     def __init__(self, interface):
         self._interface = interface
@@ -116,7 +117,7 @@ class KeyTeleop():
                 self._publish()
                 rate.sleep()
 
-    def _get_twist(self, linear, angular):
+    def _get_twist(self, linear, angular,):
         twist = Twist()
         if linear >= 0:
             twist.linear.x = self._forward(1.0, linear)
@@ -160,6 +161,12 @@ class KeyTeleop():
 
         elif keycode == ord('q'):
             rospy.signal_shutdown('Bye')
+        elif keycode == ord('a'):
+            if self._pwm_duty_cycle < 90.0:
+                self._pwm_duty_cycle += 5.0
+        elif keycode == ord('d'):
+            if self._pwm_duty_cycle > 20.0:
+                self._pwm_duty_cycle -= 5.0
         else:
             return False
 
@@ -167,13 +174,14 @@ class KeyTeleop():
 
     def _publish(self):
         self._interface.clear()
-        self._interface.write_line(2, 'Linear: %d, Angular: %d' % (self._linear, self._angular))
-        self._interface.write_line(5, 'Use arrow keys to move, space to stop, q to exit.')
+        self._interface.write_line(2, 'Linear: %d, Angular: %d, Velocity (pwm duty cycle): %d' % (self._linear, self._angular, self._pwm_duty_cycle))
+        self._interface.write_line(5, 'Use arrow keys to move, a to speed up, d to slow down ,space to stop, q to exit.')
         self._interface.refresh()
 
-        twist = self._get_twist(self._linear, self._angular)
+        twist = self._get_twist(self._linear, self._angular, self._pwm_duty_cycle)
         self._pub_cmd.publish(twist)
 
+###############################################################################
 
 class SimpleKeyTeleop():
     def __init__(self, interface):
@@ -188,6 +196,7 @@ class SimpleKeyTeleop():
         self._last_pressed = {}
         self._angular = 0
         self._linear = 0
+        self._pwm_duty_cycle = 30.0
 
     movement_bindings = {
         curses.KEY_UP:    ( 1,  0),
@@ -209,10 +218,11 @@ class SimpleKeyTeleop():
             self._publish()
             rate.sleep()
 
-    def _get_twist(self, linear, angular):
+    def _get_twist(self, linear, angular, duty_cycle):
         twist = Twist()
         twist.linear.x = linear
         twist.angular.z = angular
+        twist.linear.z = duty_cycle
         return twist
 
     def _set_velocity(self):
@@ -239,16 +249,22 @@ class SimpleKeyTeleop():
         if keycode == ord('q'):
             self._running = False
             rospy.signal_shutdown('Bye')
+        elif keycode == ord('a'):
+            if self._pwm_duty_cycle < 90.0:
+                self._pwm_duty_cycle += 5.0
+        elif keycode == ord('d'):
+            if self._pwm_duty_cycle > 20.0:
+                self._pwm_duty_cycle -= 5.0
         elif keycode in self.movement_bindings:
             self._last_pressed[keycode] = rospy.get_time()
 
     def _publish(self):
         self._interface.clear()
-        self._interface.write_line(2, 'Linear: %f, Angular: %f' % (self._linear, self._angular))
-        self._interface.write_line(5, 'Use arrow keys to move, q to exit.')
+        self._interface.write_line(2, 'Linear: %d, Angular: %d, Velocity (pwm duty cycle): %d' % (self._linear, self._angular, self._pwm_duty_cycle))
+        self._interface.write_line(5, 'Use arrow keys to move, a to speed up, d to slow down ,space to stop, q to exit.')
         self._interface.refresh()
 
-        twist = self._get_twist(self._linear, self._angular)
+        twist = self._get_twist(self._linear, self._angular, self._pwm_duty_cycle)
         self._pub_cmd.publish(twist)
 
 
