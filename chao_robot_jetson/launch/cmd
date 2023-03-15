@@ -1,0 +1,9 @@
+roslaunch realsense2_camera rs_rgbd.launch
+
+
+rosrun ORB_SLAM2 RGBD /root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Vocabulary/ORBvoc.txt /root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Examples/RGB-D/d435i.yaml
+
+roslaunch realsense2_camera rs_rgbd.launch depth_width:=640 depth_height:=480 depth_fps:=15
+
+
+
