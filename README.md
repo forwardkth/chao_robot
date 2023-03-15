@@ -1,7 +1,7 @@
 ## Jetson TX2 Robot:
 
 ![IMG_0972](https://user-images.githubusercontent.com/13931016/144505119-86f90363-76ea-4dcf-8cce-254bcbf1b88e.jpg)
-The third generation Robot platform with visual based perception, Visual inertial odometry and SLAM algorithms
+The third generation Robot platform with visual based perception and Visual SLAM algorithms
 ![IMG_0972](https://github.com/forwardkth/image/blob/master/newimages/orb_slam1.png?raw=true)
 
 #### repo: https://github.com/forwardkth/chao_robot
