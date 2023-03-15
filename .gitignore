@@ -1,2 +1,5 @@
 
 .DS_Store
+chao_robot_jetson/build/
+chao_robot_jetson/devel/
+

@@ -1,0 +1,16 @@
+<package format="2">
+  <name>ORB_SLAM2</name>
+  <version>0.0.0</version>
+  <description>The ORB_SLAM2 package</description>
+  <maintainer email="root@todo.todo">root</maintainer>
+  <license>GPLv3</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>roscpp</depend>
+  <depend>tf</depend>
+  <depend>sensor_msgs</depend>
+  <depend>image_transport</depend>
+  <depend>cv_bridge</depend>
+</package>
+
+
+
