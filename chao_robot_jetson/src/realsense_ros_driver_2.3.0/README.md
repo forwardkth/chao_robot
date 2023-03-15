@@ -7,6 +7,8 @@ For running in ROS2 environment please switch to the [ros2 branch](https://githu
 
 LibRealSense2 supported version: v2.45.0 (see [realsense2_camera release notes](https://github.com/IntelRealSense/realsense-ros/releases))
 
+The firmware version is 5.12.13.50
+
 ## Installation Instructions
 
 ### Ubuntu
