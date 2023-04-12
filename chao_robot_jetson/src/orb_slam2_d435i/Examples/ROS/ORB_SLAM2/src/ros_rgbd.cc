@@ -51,16 +51,20 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "RGBD");
     ros::start();
 
-    if(argc != 3)
-    {
-        cerr << endl << "Usage: rosrun ORB_SLAM2 RGBD path_to_vocabulary path_to_settings" << endl;        
-        ros::shutdown();
-        return 1;
-    }    
+    // if(argc != 3)
+    // {
+    //     cerr << endl << "Usage: rosrun ORB_SLAM2 RGBD path_to_vocabulary path_to_settings" << endl;        
+    //     ros::shutdown();
+    //     return 1;
+    // }    
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
-    ORB_SLAM2::System SLAM(argv[1],argv[2],ORB_SLAM2::System::RGBD,true);
-
+    
+    const std::string volcabulary("/root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Vocabulary/ORBvoc.txt");
+    const std::string calibration ("/root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Examples/RGB-D/d435i.yaml");
+    
+    // ORB_SLAM2::System SLAM(argv[1],argv[2],ORB_SLAM2::System::RGBD,true);
+    ORB_SLAM2::System SLAM(volcabulary, calibration, ORB_SLAM2::System::RGBD,true);
     ImageGrabber igb(&SLAM);
 
     ros::NodeHandle nh;
