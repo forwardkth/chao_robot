@@ -1,0 +1,15 @@
+-------------vscode  remote setting----------------------------
+
+Host jetsontx2_port_forwarding
+  HostName 192.168.1.30
+  LocalForward 22022:10.42.0.79 22
+  User root
+
+Host BBW
+  HostName localhost
+  Port 22022
+  User root
+
+----------------------------------------------------------------
+
+need port forwarding from Jetson in order to visit the BBW-TX2 subnet from host
