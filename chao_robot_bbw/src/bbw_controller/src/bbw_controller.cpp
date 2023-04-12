@@ -161,7 +161,7 @@ int main(int argc, char *argv[])
                               linear_x,
                               angular_z);
 
-  printf("%s\n","bbw_controller ROS node is started.........");
+  printf("%s\n","bbw_controller ROS node is started! Listening cmd...");
   ros::spin();
   return 0;
 }
