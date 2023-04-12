@@ -1,0 +1,11 @@
+<launch>
+<!-- launch keyboard operator on TX2 -->
+  <node name="key_tele_operation" 
+        pkg="key_teleop" 
+        type="key_teleop.py" 
+        output = "screen" 
+  />
+<!-- launch bbw controller remotely from TX2 -->
+<include file="run_bbw.launch"/>
+
+</launch>

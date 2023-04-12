@@ -1,0 +1,11 @@
+<launch>
+<!-- launch D435i RGBD mode driver -->
+<include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+
+<!-- launch Orbslam2 RGBD-->
+  <node name="orb_slam2_rdbd" 
+        pkg="ORB_SLAM2" 
+        type="RGBD" 
+        output = "screen" 
+  />
+</launch>

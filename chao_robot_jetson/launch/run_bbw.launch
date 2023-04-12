@@ -1,0 +1,19 @@
+<launch>
+  <machine
+        name="BBW"
+        address="BBW"
+        user="root"
+        password="superman"
+        timeout="1000"
+        env-loader="/root/chao_robot_bbw/launch/remote_env_loader.sh"
+        default="true"
+    />
+  <node        
+        pkg="bbw_controller" 
+        type="bbw_controller_node" 
+        name="bbw_controller_node" 
+        output="screen" 
+        respawn="true"
+        machine="BBW"
+  />
+</launch>
