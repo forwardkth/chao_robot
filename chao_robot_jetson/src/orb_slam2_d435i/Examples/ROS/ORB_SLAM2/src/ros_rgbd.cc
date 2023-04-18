@@ -60,8 +60,8 @@ int main(int argc, char **argv)
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
     
-    const std::string volcabulary("/root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Vocabulary/ORBvoc.txt");
-    const std::string calibration ("/root/project/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Examples/RGB-D/d435i.yaml");
+    const std::string volcabulary("/root/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Vocabulary/ORBvoc.txt");
+    const std::string calibration ("/root/chao_robot/chao_robot_jetson/src/orb_slam2_d435i/Examples/RGB-D/d435i.yaml");
     
     // ORB_SLAM2::System SLAM(argv[1],argv[2],ORB_SLAM2::System::RGBD,true);
     ORB_SLAM2::System SLAM(volcabulary, calibration, ORB_SLAM2::System::RGBD,true);
