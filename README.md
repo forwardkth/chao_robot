@@ -1,10 +1,17 @@
 ## Jetson TX2 Robot:
 
-![IMG_0972](https://user-images.githubusercontent.com/13931016/144505119-86f90363-76ea-4dcf-8cce-254bcbf1b88e.jpg)
+![IMG_0972](https://github.com/forwardkth/image/blob/master/newimages/chaorobot1.JPG?raw=true)
+![IMG_0972](https://github.com/forwardkth/image/blob/master/newimages/chaorobot2.JPG?raw=true)
 The third generation Robot platform with visual based perception and Visual SLAM algorithms
 ![IMG_0972](https://github.com/forwardkth/image/blob/master/newimages/orb_slam1.png?raw=true)
 
 #### repo: https://github.com/forwardkth/chao_robot
+
+#### demo video: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/75KCNIfYOH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6etamBLlwLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ## Hardware platforms:
 JetsonTX2 (for advanced algorithms)
@@ -13,9 +20,8 @@ Beaglebone White or Black (for vehicle control and sensor interfaces)
 ![](https://beagleboard.org/static/images/product_beaglebone.jpg)
 
 ## Sensors
-IntelRealsense D435i, Incremental encoder, Ultrasonic
-![](https://github.com/forwardkth/image/blob/master/newimages/IMG_7831.JPG?raw=true)
-![](https://github.com/forwardkth/image/blob/master/newimages/IMG_7862.JPG?raw=true)
+IntelRealsense D435i
+![](https://www.intelrealsense.com/wp-content/uploads/2019/02/imu_stereo_DT_d435_front-crop1a-1-1.png)
 
 ## Software platform
 ROS kinetic (currently the JetsonTX2 does not support the latest ROS2 version)
