@@ -9,9 +9,9 @@ The third generation Robot platform with visual based perception and Visual SLAM
 
 #### demo video: 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/75KCNIfYOH4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=75KCNIfYOH4
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/6etamBLlwLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=6etamBLlwLY
 
 ## Hardware platforms:
 JetsonTX2 (for advanced algorithms)
