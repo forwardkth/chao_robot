@@ -1,0 +1,4 @@
+<launch>
+<!-- launch D435i RGBD mode driver -->
+<include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+</launch>

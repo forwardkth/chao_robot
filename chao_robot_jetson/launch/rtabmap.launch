@@ -1,5 +1,7 @@
 
 <launch>
+<!-- launch D435i RGBD mode driver -->
+  <include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
   <!-- Convenience launch file to launch odometry, rtabmap and rtabmapviz nodes at once -->
 
   <!-- For stereo:=false

@@ -2,4 +2,8 @@
 .DS_Store
 chao_robot_jetson/build/
 chao_robot_jetson/devel/
+chao_robot_bbw/build/
+chao_robot_bbw/devel/
+*.weights
+
 
