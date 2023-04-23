@@ -70,13 +70,15 @@ Processing enabled by this node:
   <arg name="enable_color"        default="true"/>
 
   <arg name="fisheye_fps"         default="15"/>
-  <arg name="depth_fps"           default="60"/>
-  <arg name="infra_fps"           default="60"/>
+  <arg name="depth_fps"           default="30"/>
+  <arg name="infra_fps"           default="30"/>
   <arg name="color_fps"           default="30"/>
-  <arg name="gyro_fps"            default="10"/>
-  <arg name="accel_fps"           default="10"/>
+  <arg name="gyro_fps"            default="200"/>
+  <arg name="accel_fps"           default="250"/>
   <arg name="enable_gyro"         default="true"/>
   <arg name="enable_accel"        default="true"/>
+  <arg name="enable_imu"          default="true"/>
+  <arg name="unite_imu_method"    default="linear_interpolation"/>
 
   <arg name="enable_pointcloud"   default="false"/>
   <arg name="enable_sync"         default="true"/>
@@ -156,6 +158,7 @@ Processing enabled by this node:
       <arg name="enable_gyro"              value="$(arg enable_gyro)"/>
       <arg name="enable_accel"             value="$(arg enable_accel)"/>
       <arg name="filters"                  value="$(arg filters)"/>
+      <arg name="unite_imu_method"         value="$(arg unite_imu_method)"/>
 
       <arg name="publish_tf"               value="$(arg publish_tf)"/>
       <arg name="tf_publish_rate"          value="$(arg tf_publish_rate)"/>
