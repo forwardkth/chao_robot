@@ -13,6 +13,10 @@ https://www.youtube.com/watch?v=75KCNIfYOH4
 
 https://www.youtube.com/watch?v=6etamBLlwLY
 
+https://www.youtube.com/watch?v=nRK_kvx4fz8
+
+https://www.youtube.com/watch?v=pjmCqwgJBh8
+
 ## Hardware platforms:
 JetsonTX2 (for advanced algorithms)
 ![](https://github.com/forwardkth/image/blob/master/newimages/IMG_7856.JPG?raw=true)
