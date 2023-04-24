@@ -12,7 +12,7 @@
     <param name="latch" value="true" />
 
     <!-- max/min height for occupancy map, should be in meters -->
-    <param name="pointcloud_max_z" value="0.05" />
+    <param name="pointcloud_max_z" value="0.5" />
     <param name="pointcloud_min_z" value="0" />
 
     <!-- topic from where pointcloud2 messages are subscribed -->
