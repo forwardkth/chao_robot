@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<launch>
+  <include file="d435i.launch"/>
+  <!-- Start octomap server -->
+  <include file="octomap.launch"/>
+  <!-- Start octomap server -->
+  <include file="vins_rviz.launch"/>
+</launch>

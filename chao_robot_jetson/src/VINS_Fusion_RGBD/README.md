@@ -46,7 +46,7 @@ PCL 1.7
 rosrun vins vins_node /root/chao_robot/chao_robot_jetson/src/VINS_Fusion_RGBD/config/realsense/realsense_depth_imu_config.yaml
 
 ### 3.2 运行全局定位与稠密建图  
-rosrun loop_fusion loop_fusion_node  /root/chao_robot/chao_robot_jetson/src/VINS_Fusion_RGBD/config/realsense/realsense_depth_imu_config.yaml
+rosrun loop_fusion loop_fusion_node /root/chao_robot/chao_robot_jetson/src/VINS_Fusion_RGBD/config/realsense/realsense_depth_imu_config.yaml
 
 ### 3.3 录制bag文件  
 rosbag record /camera/imu /camera/color/image_raw /camera/aligned_depth_to_color/image_raw
