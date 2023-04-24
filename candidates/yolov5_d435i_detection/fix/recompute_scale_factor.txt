@@ -1,5 +1,0 @@
-As a work around you can edit your upsampling.py file:
-
-"E:\condaaa\lib\site-packages\torch\nn\modules\upsampling.py"
-
-If you comment out the "recompute_scale_factor=self.recompute_scale_factor" parameter everything seems to work fine.
